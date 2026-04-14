@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean Neo-Brutalist Puzzle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-wrapper">
+    
+    <!-- MENU SCREEN -->
+    <div id="menu-screen" class="card paper-card active">
+      <header class="game-header">
+        <h1>SLIDING<br>PUZZLE</h1>
+        <div class="badge">LOGIC GAME</div>
+      </header>
+      <div class="menu-content">
+        <div class="control-group">
+          <label for="control-level">Pilih Tingkat Kesulitan:</label>
+          <div class="select-wrapper">
+            <select id="control-level">
+              <option value="3">Easy (3x3 Grid)</option>
+              <option value="4">Medium (4x4 Grid)</option>
+              <option value="5">Hard (5x5 Grid)</option>
+            </select>
+          </div>
+        </div>
+        <button id="start-btn" class="btn primary btn-large">MAIN SEKARANG</button>
+      </div>
+    </div>
+
+    <!-- GAME SCREEN -->
+    <div id="game-screen" class="card paper-card hidden">
+      <header class="game-header compact">
+        <h2>PUZZLE</h2>
+        <button id="back-btn" class="btn secondary btn-small">KEMBALI</button>
+      </header>
+
+      <div class="stats-row">
+        <div class="stat-box">
+          <span class="label">WAKTU</span>
+          <span id="timer" class="value">00:00</span>
+        </div>
+        <div class="stat-box">
+          <span class="label">LANGKAH</span>
+          <span id="moves" class="value">0</span>
+        </div>
+      </div>
+
+      <div class="puzzle-area">
+        <div id="puzzle-grid" class="puzzle-grid"></div>
+      </div>
+
+      <div class="controls-row">
+        <button id="restart-btn" class="btn secondary">ULANGI ACAK</button>
+      </div>
+    </div>
+
+    <!-- WIN MODAL -->
+    <div id="win-modal" class="modal-overlay hidden">
+      <div class="card paper-card win-card">
+        <div class="badge win-badge">SELESAI!</div>
+        <h2>PUZZLE<br>TERPECAHKAN</h2>
+        <div class="win-stats">
+          <p>Waktu: <strong id="win-time">00:00</strong></p>
+          <p>Langkah: <strong id="win-moves">0</strong></p>
+        </div>
+        <div class="controls-row">
+          <button id="modal-menu-btn" class="btn secondary">KEMBALI</button>
+          <button id="modal-restart-btn" class="btn primary">MAIN LAGI</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
